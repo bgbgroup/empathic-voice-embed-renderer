@@ -3,7 +3,6 @@ import { CloseButton } from '../CloseButton';
 import { FC, PropsWithChildren } from 'react';
 import { MuteButton } from '@/components/MuteButton';
 import { useVoice } from '@humeai/voice-react';
-import { ExpandButton } from '../ExpandButton';
 import * as Tooltip from '@radix-ui/react-tooltip';
 
 export type ConversationFrameProps = PropsWithChildren<{
@@ -73,22 +72,6 @@ export const ConversationFrame: FC<ConversationFrameProps> = ({
                 sideOffset={5}
               >
                 {isMuted ? 'Unmute' : 'Mute'}
-              </Tooltip.Content>
-            </Tooltip.Root>
-            <Tooltip.Root>
-              <Tooltip.Trigger>
-                <ExpandButton
-                  onPress={() => {
-                    window.open('https://voice-demo.hume.ai/');
-                  }}
-                />
-              </Tooltip.Trigger>
-              <Tooltip.Content
-                className={'rounded-md bg-black px-2 py-1 text-xs text-white will-change-[transform,opacity] data-[state=delayed-open]:data-[side=top]:animate-slideUpAndFade'}
-                side={'top'}
-                sideOffset={5}
-              >
-                View full demo
               </Tooltip.Content>
             </Tooltip.Root>
           </Tooltip.Provider>

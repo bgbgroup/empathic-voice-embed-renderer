@@ -26,9 +26,9 @@ export const IntroScreen = ({
       transition={{ duration: 2 }}
     >
       <h2 className="text-center text-3xl">
-        <span>Meet EVI, our </span>
+        <span>Meet Sherlock, the </span>
         <CircledText>empathic</CircledText>
-        <span> AI voice</span>
+        <span> AI</span>
       </h2>
       <div className="w-fit">
         <motion.div
@@ -63,33 +63,8 @@ export const IntroScreen = ({
             isLoading={isConnecting}
             loadingText={'Connecting...'}
           >
-            Start Conversation
+            Talk
           </Button>
-          <div className="absolute right-2 top-3">
-            <Tooltip.Provider delayDuration={400}>
-              <Tooltip.Root>
-                <Tooltip.Trigger>
-                  <div className="grid size-[36px] cursor-pointer place-content-center rounded-full bg-tan-600/20 text-black transition-colors hover:bg-tan-600/50">
-                    <a
-                      href="https://share.hsforms.com/15hCR14R4S-e-dlMwN42tkwcjsur"
-                      target="_blank"
-                    >
-                      <Bell className="size-4" />
-                    </a>
-                  </div>
-                </Tooltip.Trigger>
-                <Tooltip.Content
-                  className={
-                    'rounded-md bg-black px-2 py-1 text-xs text-white shadow-sm will-change-[transform,opacity] data-[state=delayed-open]:data-[side=left]:animate-slideLeftAndFade'
-                  }
-                  side={'left'}
-                  sideOffset={5}
-                >
-                  Notify me of public access
-                </Tooltip.Content>
-              </Tooltip.Root>
-            </Tooltip.Provider>
-          </div>
         </motion.div>
       </div>
     </motion.div>

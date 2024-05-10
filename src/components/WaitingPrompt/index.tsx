@@ -4,11 +4,8 @@ import { AnimatePresence, motion } from 'framer-motion';
 import { useState, useEffect } from 'react';
 
 const prompts = [
-  "What is Hume's mission?",
-  'Where can I learn more about EVI?',
-  'Show me more about the Hume team',
-  'How do you define well-being?',
-  "Help me learn about Hume's APIs",
+  "How do you compe with your disease?",
+  'Show me a day in your life',
 ];
 
 export const WaitingPrompt = () => {
