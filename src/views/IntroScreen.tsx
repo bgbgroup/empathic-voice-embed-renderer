@@ -43,7 +43,7 @@ export const IntroScreen = ({
       transition={{ duration: 2 }}
     >
       <h2 className="text-center text-3xl">
-        (introText ? <span>{introText}</span>|| <DefaultIntroHTML/>)
+        {introText ? <span>{introText}</span> : <DefaultIntroHTML/>}
       </h2>
       <div className="w-fit">
         <motion.div
