@@ -6,11 +6,11 @@ export function cn(...inputs: ClassValue[]) {
 }
 
 export function getQueryParams(url : string): Record<string, string>{
-  let urlObj = new URL(url);
-  let params = new URLSearchParams(urlObj.search);
-  let queryParams = {};
+  const urlObj = new URL(url);
+  const params = new URLSearchParams(urlObj.search);
+  const queryParams = {} as Record<string, string>;
 
-  for(let param of params) {
+  for(const param of params) {
       queryParams[param[0]] = param[1];
   }
 

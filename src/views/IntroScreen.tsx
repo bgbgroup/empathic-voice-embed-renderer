@@ -1,15 +1,18 @@
 import { Button } from '@/components/Button';
+//@ts-ignore
 import { CircledText } from '@/components/CircledText';
 import { motion } from 'framer-motion';
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { cn } from '@/utils';
 import { useDerivedLayoutState } from '@/store/useDerivedLayoutState';
 import {getQueryParams} from '@/utils';
 
-const defaultIntroHTML = `
-<span>Meet Sherlock, the </span>
+const DefaultIntroHTML = () => {
+  return (`
+        <span>Meet Sherlock, the </span>
         <CircledText>empathic</CircledText>
-        <span> AI</span>`;
+        <span> AI</span>`)
+};
 
 export const IntroScreen = ({
   onConnect,
@@ -20,14 +23,14 @@ export const IntroScreen = ({
 }) => {
   const { isShortFrame } = useDerivedLayoutState();
 
-  const [introText, setIntroText] = useState(defaultIntroHTML);
+  const [introText, setIntroText] = useState<string>('');
 
   useEffect(() => {
     const params = getQueryParams(window.location.href);
     if( params['welcomeText']) {
-      setIntroText(`<span>${ params['welcomeText']}</span>`)
+      setIntroText(params['welcomeText'] as string)
     }
-  });
+  }, [window.location.href]);
 
   return (
     <motion.div
@@ -39,8 +42,8 @@ export const IntroScreen = ({
       animate={{ opacity: 1, translateY: -4 }}
       transition={{ duration: 2 }}
     >
-      <h2 className="text-center text-3xl"
-          dangerouslySetInnerHTML={{ __html: introText }}>
+      <h2 className="text-center text-3xl">
+        (introText ? <span>{introText}</span>|| <DefaultIntroHTML/>)
       </h2>
       <div className="w-fit">
         <motion.div
