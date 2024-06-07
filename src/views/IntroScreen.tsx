@@ -1,8 +1,15 @@
 import { Button } from '@/components/Button';
 import { CircledText } from '@/components/CircledText';
 import { motion } from 'framer-motion';
+import React, { useEffect, useState } from 'react';
 import { cn } from '@/utils';
 import { useDerivedLayoutState } from '@/store/useDerivedLayoutState';
+import {getQueryParams} from '@/utils';
+
+const defaultIntroHTML = `
+<span>Meet Sherlock, the </span>
+        <CircledText>empathic</CircledText>
+        <span> AI</span>`;
 
 export const IntroScreen = ({
   onConnect,
@@ -12,6 +19,15 @@ export const IntroScreen = ({
   isConnecting: boolean;
 }) => {
   const { isShortFrame } = useDerivedLayoutState();
+
+  const [introText, setIntroText] = useState(defaultIntroHTML);
+
+  useEffect(() => {
+    const params = getQueryParams(window.location.href);
+    if( params['welcomeText']) {
+      setIntroText(`<span>${ params['welcomeText']}</span>`)
+    }
+  });
 
   return (
     <motion.div
@@ -23,10 +39,8 @@ export const IntroScreen = ({
       animate={{ opacity: 1, translateY: -4 }}
       transition={{ duration: 2 }}
     >
-      <h2 className="text-center text-3xl">
-        <span>Meet Sherlock, the </span>
-        <CircledText>empathic</CircledText>
-        <span> AI</span>
+      <h2 className="text-center text-3xl"
+          dangerouslySetInnerHTML={{ __html: introText }}>
       </h2>
       <div className="w-fit">
         <motion.div
