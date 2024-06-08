@@ -2,6 +2,7 @@ import { useDerivedLayoutState } from '@/store/useDerivedLayoutState';
 import { cn } from '@/utils';
 import { AnimatePresence, motion } from 'framer-motion';
 import { useState, useEffect } from 'react';
+import {getQueryParams} from '@/utils';
 
 const prompts = [
   "How do you compe with your disease?",
@@ -11,6 +12,14 @@ const prompts = [
 export const WaitingPrompt = () => {
   const [currentPromptIndex, setCurrentPromptIndex] = useState(0);
   const { isShortFrame } = useDerivedLayoutState();
+
+  const [showPrompts, setshowPrompts] = useState<boolean>(true);
+  useEffect(() => {
+    const params = getQueryParams();
+    if( params['hidePrompt']) {
+      setshowPrompts(false)
+    }
+  }, [window.location.href]);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -38,7 +47,7 @@ export const WaitingPrompt = () => {
       >
         Try saying...
       </div>
-      <motion.div
+      {showPrompts ? <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1, delay: 1.5 }}
@@ -58,7 +67,7 @@ export const WaitingPrompt = () => {
             "{prompts[currentPromptIndex]}"
           </motion.div>
         </AnimatePresence>
-      </motion.div>
+      </motion.div> : null}
     </motion.div>
   );
 };

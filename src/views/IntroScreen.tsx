@@ -26,7 +26,7 @@ export const IntroScreen = ({
   const [introText, setIntroText] = useState<string>('');
 
   useEffect(() => {
-    const params = getQueryParams(window.location.href);
+    const params = getQueryParams();
     if( params['welcomeText']) {
       setIntroText(params['welcomeText'] as string)
     }
