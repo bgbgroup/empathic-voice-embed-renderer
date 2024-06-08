@@ -5,7 +5,7 @@ export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
 
-export function getQueryParams(url : string): Record<string, string>{
+export function getQueryParams(url: string = window.location.href): Record<string, string>{
   const urlObj = new URL(url);
   const params = new URLSearchParams(urlObj.search);
   const queryParams = {} as Record<string, string>;
