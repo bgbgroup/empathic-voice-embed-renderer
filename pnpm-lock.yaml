@@ -6,11 +6,11 @@ settings:
 
 dependencies:
   '@humeai/voice-embed-react':
-    specifier: 0.1.4
-    version: 0.1.4
+    specifier: 0.1.6
+    version: 0.1.6(react-dom@18.3.0)(react@18.3.0)
   '@humeai/voice-react':
-    specifier: 0.1.4
-    version: 0.1.4
+    specifier: 0.1.6
+    version: 0.1.6(react-dom@18.3.0)(react@18.3.0)
   '@radix-ui/react-tooltip':
     specifier: ^1.0.7
     version: 1.0.7(@types/react-dom@18.2.25)(@types/react@18.2.79)(react-dom@18.3.0)(react@18.3.0)
@@ -699,25 +699,31 @@ packages:
     resolution: {integrity: sha512-93zYdMES/c1D69yZiKDBj0V24vqNzB/koF26KPaagAfd3P/4gUlh3Dys5ogAK+Exi9QyzlD8x/08Zt7wIKcDcA==}
     dev: true
 
-  /@humeai/voice-embed-react@0.1.4:
-    resolution: {integrity: sha512-+TjAMq7K+bpLBInn+k0yVOljcNjuBSy44+i7bZrqPf/6OhOV+5Cp5TgJ/SDZJfP3VLBQooox8hVI+2keFINcyQ==}
+  /@humeai/voice-embed-react@0.1.6(react-dom@18.3.0)(react@18.3.0):
+    resolution: {integrity: sha512-RCOnlNUMZh5TFCJ+o4zj1gD/sgt3LBHzPrCQ03B65u174OLXHT7c+jEnRydqyP7qdQgKeIJUXnk5b0hfX1P6NQ==}
+    peerDependencies:
+      react: '>=18.2.0'
+      react-dom: '>=18.2.0'
     dependencies:
-      '@humeai/voice-embed': 0.1.4
+      '@humeai/voice-embed': 0.1.6
       react: 18.3.0
       react-dom: 18.3.0(react@18.3.0)
     dev: false
 
-  /@humeai/voice-embed@0.1.4:
-    resolution: {integrity: sha512-+Ip2ZCkyTH/K6n+nN110mzS5g/5MybE546GtnuhutbIrII+edCQLFKIz9mcCuw8cMzr2wF5tybutnbWGcPIbFg==}
+  /@humeai/voice-embed@0.1.6:
+    resolution: {integrity: sha512-wTquaEyIrxGNeJMDSqYpRBJb7n6Ct4t27wahsHnXF27sYmI3GX3GPKtX6LhJRg4hW0z7zAo/3u+d+btazIVVkQ==}
     dependencies:
-      '@humeai/voice': 0.1.4
+      '@humeai/voice': 0.1.6
       zod: 3.23.4
     dev: false
 
-  /@humeai/voice-react@0.1.4:
-    resolution: {integrity: sha512-Mwjx3efy/bWtsmUHYjCrGNerYc/RzotzAjD6Di1B2WsSuJ3e3ujPIYgaB2rhxc3DzlfamlzHpMJ/fi6lZxje4g==}
+  /@humeai/voice-react@0.1.6(react-dom@18.3.0)(react@18.3.0):
+    resolution: {integrity: sha512-GI0z/D/9klY2JGOA8QHqoCZM53j8ohrNuL7fEepte0/is+Wq5PMWtN2wl56i48ePZTH+fgd/baB7v+GQS1xTFQ==}
+    peerDependencies:
+      react: '>=18.2.0'
+      react-dom: '>=18.2.0'
     dependencies:
-      '@humeai/voice': 0.1.4
+      '@humeai/voice': 0.1.6
       date-fns: 3.6.0
       meyda: 5.6.3
       react: 18.3.0
@@ -728,8 +734,8 @@ packages:
       - supports-color
     dev: false
 
-  /@humeai/voice@0.1.4:
-    resolution: {integrity: sha512-ihezjWwD4QJn3N1a5/qaR+oOwPftlDzRCBI4EBZX1dapHZm5cs4c3p+QdTnEyi/IL1RWu6ZNrmpCQAS4JC7+fg==}
+  /@humeai/voice@0.1.6:
+    resolution: {integrity: sha512-WEBX/ogXDfLAV1Q3y2BlvKjMVV7sU7hljGr8gA3CvURuu0xGMOmakWeW88IlL2vBwZtouiq3cozWDwr2KDLMLQ==}
     dependencies:
       reconnecting-websocket: 4.4.0
       snakecase-keys: 8.0.0
