@@ -17,6 +17,9 @@ export const Views: FC<ViewsProps> = () => {
 
   const { connect, disconnect, status, error } = useVoice();
 
+  console.debug('status:', status);
+  console.debug('error:', error);
+
   if (layoutState === LayoutState.CLOSED) {
     return (
       <>
